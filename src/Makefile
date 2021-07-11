@@ -14,17 +14,17 @@ SVCDIR = $(DESTDIR)/lib/systemd/system
 #
 
 package:
-        # Packaging for Debian.
-        debuild
+	# Packaging for Debian.
+	debuild
 
 package-inner:
-        # Innermost iteration; invoked by debuild.
+	# Innermost iteration; invoked by debuild.
 
-        # Binaries.
-        install -Dm 0755 -o root share-distro-fs -t "$(BINDIR)"
+	# Binaries.
+	install -Dm 0755 -o root share-distro-fs -t "$(BINDIR)"
 
-        # Unit files.
-        install -Dm 0644 -o root wsl-share-fs.service -t "$(SVCDIR)"
+	# Unit files.
+	install -Dm 0644 -o root wsl-share-fs.service -t "$(SVCDIR)"
 
 clean:
-        debuild -- clean
+	debuild -- clean
