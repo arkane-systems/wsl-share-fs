@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable cross-distro sharing of this distro's filesystem
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/share-distro-fs
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

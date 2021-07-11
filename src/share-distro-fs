@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# If mount point directory does not exist, create it.
+if [ ! -d "/mnt/wsl/$WSL_DISTRO_NAME" ]; then
+    mkdir "/mnt/wsl/$WSL_DISTRO_NAME"
+fi
+
+# If mount point directory is not mounted upon, bind mount fs.
+if ! mountpoint -q -- "/mnt/wsl/$WSL_DISTRO_NAME"; then
+    mount --bind --make-private / "/mnt/wsl/$WSL_DISTRO_NAME"
+fi

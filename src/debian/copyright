@@ -1,0 +1,6 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/arkane-systems/wsl-share-fs
+
+Files: *
+Copyright: 2021 Alistair Young <avatar@arkane-systems.net>
+License: /usr/share/common-licenses/GPL-3
